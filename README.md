@@ -6,3 +6,10 @@ This project is an implementation of two widely-used Monte Carlo methods, one fo
 
 This is kind of the "gateway" into MCS, but should only be used for scalar values.  It is good for complex distributions, referred to as f(X), where we do not have an easily computable functional inverse to sample the X values.  We choose a proposal distribution g, which we can sample from, and a constant M, which ensures that f(X) < M * g(X).  Here is how it works:
 
+1) Sample $x \sim g$.
+2) Sample $y \sim \textbf{Uniform}(0,1)$
+3) If $y < f(x)/(M g(x))$, accept $x$, else reject.  Repeat (1)
+
+
+
+
